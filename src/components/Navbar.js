@@ -23,12 +23,14 @@ import {
 } from '@material-ui/icons';
 import avatar from '../avatar.png';
 import { makeStyles } from '@material-ui/core/styles';
+import * as Constants from '../constants';
+
 
 
 const useStyles=makeStyles(theme=>({
     menuSliderContainer:{
         width:250,
-        background:"#511",
+        background:Constants.sideBar,
         height:"100%"
     },
     avatar:{
@@ -38,7 +40,7 @@ const useStyles=makeStyles(theme=>({
         height:theme.spacing(13)
     },
     ListItem:{
-        color:"tan"
+        color:Constants.defaultTextColor
     }
 }));
 
@@ -49,7 +51,7 @@ const menuItems= [
     },
     {
         listIcon:<AssignmentInd />,
-        listText:"resume"
+        listText:"Resume"
     },
     {
         listIcon:<Apps />,
@@ -94,12 +96,12 @@ const Navbar = () => {
         <>
         
         <Box component="nav">
-            <AppBar position="static" style={{backgroundColor:"#222222"}}> 
+            <AppBar position="static" style={{backgroundColor: Constants.appBarBackgroundColor}}> 
                 <Toolbar>
                     <IconButton onClick={toggleSlider("right",true)}>
-                    <MenuOpen style={{color:"tomato"}} />
+                    <MenuOpen style={{color:Constants.menuIconColor}} />
                     </IconButton>
-                    <Typography variant="h5" style={{color:"tan"}}>
+                    <Typography variant="h5" style={{color:Constants.defaultTextColor}}>
                         Portfolio
                     </Typography>
                     <MobileRightMenuSlider open={state.right} anchor="right" onClose={toggleSlider("right",false)}>
