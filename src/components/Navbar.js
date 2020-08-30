@@ -72,7 +72,7 @@ const Navbar = () => {
     const classes = useStyles();
 
     const sideList= slider => (
-        <Box className={classes.menuSliderContainer} component="div" onClick={toggleSlider("right",true)} >
+        <Box className={classes.menuSliderContainer} component="div" onClick={toggleSlider("right",false)} >
             <Avatar className={classes.avatar} src={avatar} alt="Rishabh Sharma" />
             <Divider />
             <List>
