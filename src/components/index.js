@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar'
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from './Header'
 import Particles from 'react-particles-js';
 import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles=makeStyles({
     particlesCanvas:{
-        position:"absolute"
+        position:"absolute",
+        opacity:"0.3"
     }
 })
 
@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div>
             
-            <CssBaseline />
+            
             <Navbar></Navbar>
             <Header/>
             <Particles canvasClassName={classes.particlesCanvas}
