@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### ` Customizing `
 
-To use the portfolio for your own use you can clone the repo and set the required setting and information via the constants folder.
+To use the portfolio for your own use you can clone the repo and set the required setting and information via the src/constants folder.
 
 
 ## Available Scripts
