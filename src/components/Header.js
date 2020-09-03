@@ -7,7 +7,9 @@ import {
     } from "@material-ui/core";
 import avatar from '../avatar.png';
 import Typed from 'react-typed';
-import {makeStyles} from "@material-ui/core/styles"
+import {makeStyles} from "@material-ui/core/styles";
+import {primaryAccentColor , secondaryAccentColor } from '../constants';
+import {Name, Roles} from '../constants/Resume';
 
 
 const useStyles= makeStyles( theme => ({
@@ -17,10 +19,10 @@ const useStyles= makeStyles( theme => ({
             margin:theme.spacing(1)
         },
         title:{
-            color:"tomato",
+            color:primaryAccentColor,
         },
         subTitle:{
-            color:"tan",
+            color:secondaryAccentColor,
             marginBottom:"3rem"
         },
         typedContainer:{
@@ -40,14 +42,14 @@ const Header = () => {
         <div>
             <Box className={classes.typedContainer}>
                 <Grid container justify="center">
-                <Avatar className={classes.avatar} src={avatar} alt="Rishabh Sharma"></Avatar>
+                <Avatar className={classes.avatar} src={avatar} alt={Name}></Avatar>
                 </Grid>
             <Typography className={classes.title} variant="h4">
-                <Typed strings={["Rishabh Sharma"]} typeSpeed={40} />
+                <Typed strings={[Name]} typeSpeed={40} />
             </Typography>
             <br/>
             <Typography className={classes.subTitle} variant="h5">
-                <Typed strings={["Web Development","App Developer","Graphics Designer"]} 
+                <Typed strings={Roles} 
                 typeSpeed={40}
                 backSpeed={60}
                 loop />

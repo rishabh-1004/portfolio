@@ -41,7 +41,7 @@ const useStyles=makeStyles(theme=>({
         height:theme.spacing(13)
     },
     ListItem:{
-        color:Constants.defaultTextColor
+        color:Constants.secondaryAccentColor
     }
 }));
 
@@ -102,9 +102,9 @@ const Navbar = () => {
             <AppBar position="static" style={{backgroundColor: Constants.appBarBackgroundColor}}> 
                 <Toolbar>
                     <IconButton onClick={toggleSlider("right",true)}>
-                    <MenuOpen style={{color:Constants.menuIconColor}} />
+                    <MenuOpen style={{color:Constants.primaryAccentColor}} />
                     </IconButton>
-                    <Typography variant="h5" style={{color:Constants.defaultTextColor}}>
+                    <Typography variant="h5" style={{color:Constants.secondaryAccentColor}}>
                         Portfolio
                     </Typography>
                     <MobileRightMenuSlider open={state.right} anchor="right" onClose={toggleSlider("right",false)}>

@@ -3,10 +3,12 @@ import {makeStyles} from "@material-ui/core/styles";
 import {Typography, Box} from "@material-ui/core";
 import Navbar from './Navbar';
 import { Rotate90DegreesCcw } from '@material-ui/icons';
+import * as Constants from '../constants';
+import {ExperienceDetails} from '../constants/Resume';
 
 const useStyles=makeStyles(theme => ({
     mainContainer:{
-        background: "#233"
+        background: Constants.resumePageBackground,
     },
     timeLine:{
         position:"relative",
@@ -16,7 +18,7 @@ const useStyles=makeStyles(theme => ({
             content:"''",
             position:"absolute",
             height:"100%",
-            border:"1px solid tan",
+            border:Constants.TimeLineMainBar,
             right:"40px",
             top:0
         },
@@ -35,7 +37,7 @@ const useStyles=makeStyles(theme => ({
     },
     timeLineItem:{
         padding: "1rem",
-        borderBottom: "2px solid tan",
+        borderBottom: Constants.TimeLineYearBottomBorder,
         position: "relative",
         margin: "1rem 3rem 1rem 1rem",
         clear:"both",
@@ -49,7 +51,7 @@ const useStyles=makeStyles(theme => ({
             right:"-0.625rem",
             top:"calc(50% - 5px)",
             borderStyle:"solid",
-            borderColor:"tomato tomato transparent  transparent",
+            borderColor:Constants.ArrowRight,
             borderWidth:"0.625rem",
             transform: "rotate(45deg)",
         },
@@ -59,12 +61,13 @@ const useStyles=makeStyles(theme => ({
             "&:nth-of-type(2n)":{
                 float:"right",
                 margin:"1rem",
-                borderColor:"tan",
+                borderColor:Constants.secondaryAccentColor,
             },
             "&:nth-of-type(2n):before":{
                 right:"auto",
                 left:"-0.625rem",
-                borderColor:"transparent transparent tomato tomato",
+                borderColor:Constants.ArrowLeft,
+                
             }
         }
     },
@@ -73,8 +76,8 @@ const useStyles=makeStyles(theme => ({
         maxWidth:"9.375rem",
         margin:"0 3rem 0 auto",
         fontSize:"1.8rem",
-        background:"tomato",
-        color:"white",
+        background:Constants.primaryAccentColor,
+        color:Constants.ResumePageYearColor,
         lineHeight:1,
         padding:"0.5rem 0 1rem",
         "&:before":{
@@ -93,16 +96,18 @@ const useStyles=makeStyles(theme => ({
         }
     },
     heading:{
-        color:"tomato",
+        color:Constants.primaryAccentColor,
         padding:"3rem 0",
         textTransform:"uppercase"
     },
     subHeading:{
-        color:"white",
+        color:Constants.ResumeCompanyName,
         padding:"0",
         textTransform:"uppercase"
     }
 }));
+
+
 
 const Resume = () => {
     const classes = useStyles();
@@ -114,54 +119,27 @@ const Resume = () => {
                 Working experience
             </Typography>
             <Box component="div" className={classes.timeLine}>
-                <Typography 
-                    variant="h2" 
-                    className={`${classes.timeLineYear} ${classes.timeLineItem} `}>2013
-                </Typography>
-                <Box component="div" className={classes.timeLineItem}>
-                    <Typography variant="h5"  className={classes.subHeading}>
-                        WebDesign
-                    </Typography>
-                    <Typography variant="body1" >
-                        Comapany name
-                    </Typography>
-                    <Typography variant="subtitle1" >
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </Typography>
-
-                </Box>
-                <Typography 
-                    variant="h2" 
-                    className={`${classes.timeLineYear} ${classes.timeLineItem} `}>2014
-                </Typography>
-                <Box component="div" className={classes.timeLineItem}>
-                    <Typography variant="h5" align="center" className={classes.subHeading}>
-                        WebDesign
-                    </Typography>
-                    <Typography variant="body1" align="center">
-                        Comapany name
-                    </Typography>
-                    <Typography variant="subtitle1" align="center">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </Typography>
-
-                </Box>
-                <Typography 
-                    variant="h2" 
-                    className={`${classes.timeLineYear} ${classes.timeLineItem} `}>2016
-                </Typography>
-                <Box component="div" className={classes.timeLineItem}>
-                    <Typography variant="h5" align="center" className={classes.subHeading}>
-                        Graphics Designer
-                    </Typography>
-                    <Typography variant="body1" align="center">
-                        Comapany name
-                    </Typography>
-                    <Typography variant="subtitle1" align="center">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </Typography>
-
-                </Box>
+            {ExperienceDetails.map((experience,key)=>(
+                <>
+                     <Typography 
+                     variant="h2" 
+                     className={`${classes.timeLineYear} ${classes.timeLineItem} `}>{experience.year}
+                 </Typography>
+                 <Box component="div" className={classes.timeLineItem}>
+                     <Typography variant="h5"  className={classes.subHeading}>
+                            {experience.position}
+                     </Typography>
+                     <Typography variant="body1" >
+                            {experience.companyName}
+                     </Typography>
+                     <Typography variant="subtitle1" >
+                            {experience.details}
+                     </Typography>
+ 
+                 </Box> 
+                 </>      
+                        ))};
+                
 
             </Box>
         </Box>

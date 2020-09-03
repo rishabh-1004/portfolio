@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Using this portfolio
+
+### ` Customizing `
+
+To use the portfolio for your own use you can clone the repo and set the required setting and information via the constants folder.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
