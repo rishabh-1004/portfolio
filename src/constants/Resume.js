@@ -1,7 +1,20 @@
+//Resume Details
+
+//To change the avatar simply replace the avatar.png with your avatar with same name and format
 
 export const Name="Rishabh Raj Sharma";
+
+//Roles that the user have worked on, or is known for
 export const Roles=["Web Development","App Developer","Graphics Designer"];
 
+//Experience Details
+{/* 
+    Always to be enterd in the format 
+        Year- Job Years , either single year or to and from without spaces
+        Position- Job Position
+        Company Name - Name of Company
+        details- jon details in 20-30 words
+*/}
 export const ExperienceDetails=[
     {
         year:"2013",

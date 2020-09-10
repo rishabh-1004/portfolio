@@ -101,7 +101,7 @@ const useStyles=makeStyles(theme => ({
         textTransform:"uppercase"
     },
     subHeading:{
-        color:Constants.ResumeCompanyName,
+        color:Constants.ResumePositionName,
         padding:"0",
         textTransform:"uppercase"
     }
